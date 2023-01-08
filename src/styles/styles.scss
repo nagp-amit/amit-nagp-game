@@ -1,0 +1,10 @@
+@import 'variables';
+@import "~bootstrap/scss/bootstrap";
+
+.conatiner {
+    &__game {
+        height: 900px;
+        width: 100%;
+        background-color: $white;
+    }
+}
