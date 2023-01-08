@@ -7,12 +7,12 @@ const IndexPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [isHangmanVisible, setHangmanVisible] = useState(false)
+  const [isPiVisible, setPiVisible] = useState(false)
 
-  const [isTicTacToeVisible, setTicTacToeVisible] = useState(false)
+  const [isSnakeVisible, setSnakeVisible] = useState(false)
 
-  const showHangManHandler = () => {
-    setTicTacToeVisible(() => {
+  const showPiHandler = () => {
+    setSnakeVisible(() => {
       return false
     });
 
@@ -20,13 +20,13 @@ const IndexPage = () => {
       return true;
     });
 
-    setHangmanVisible(() => {
+    setPiVisible(() => {
       return true
     });
   }
 
-  const showTicTacToeHandler = () => {
-    setHangmanVisible(() => {
+  const showSnakeHandler = () => {
+    setPiVisible(() => {
       return false
     });
 
@@ -34,7 +34,7 @@ const IndexPage = () => {
       return true;
     });
 
-    setTicTacToeVisible(() => {
+    setSnakeVisible(() => {
       return true
     });
   }
@@ -53,31 +53,31 @@ const IndexPage = () => {
           <button
             type="button"
             className="btn btn-primary mr-15"
-            onClick={showHangManHandler}
+            onClick={showPiHandler}
           >
             Show PI Game
           </button>
           <button
             type="button"
             className="btn btn-info"
-            onClick={showTicTacToeHandler}
+            onClick={showSnakeHandler}
           >
             Show Snake Game
           </button>
         </div>
         <div className="conatiner row mt-5 mx-5">
           {isLoading && <div className="alert alert-success">Game Is Loading........</div>}
-          {isHangmanVisible && (
+          {isPiVisible && (
             <iframe
-              title="Hangman Game"
-              src="https://amit-hangman-game.netlify.app/"
+              title="PI Game"
+              src="https://amit-pi-game.netlify.app/"
               onLoad={resetLoader}
               className="conatiner__game"
             ></iframe>
           )}
-          {isTicTacToeVisible && <iframe
-            title="TicTacToe Game"
-            src="https://amit-tictactoe-game.netlify.app/"
+          {isSnakeVisible && <iframe
+            title="Snake Game"
+            src="https://amit-snake-game.netlify.app/"
             onLoad={resetLoader}
             className="conatiner__game"
           ></iframe>}
